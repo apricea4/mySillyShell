@@ -1,5 +1,9 @@
 #include "fileUtil.h"
 #include "myUtils.h"
+#include "../alias/alias.h"
+#include "../tokenize/makeArgs.h"
+#include "../linkedlist/listUtils.h"
+#include "../linkedlist/linkedList.h"
 
 FILE * openInputFile_Prompt()
 {
@@ -38,6 +42,99 @@ FILE * openInputFileType_Prompt(char * type)
 
    return fin;
 }// end openInputFileType_Prompt
+
+int countAlias(FILE * fin)
+{
+
+    char tmp[MAX];
+    int count = 0;
+    fgets(tmp, MAX,fin);//get rid of space between env vars and alias list
+    fgets(tmp, MAX,fin);
+    while(strncmp(tmp,"alias", strlen("alias")) == 0)
+    {
+        count++;
+        fgets(tmp,MAX,fin);
+
+
+    }
+    rewind(fin);
+
+
+}
+
+
+
+void handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* aliasList, LinkedList* pathList)
+{
+
+    char tmp[MAX];
+    fgets(tmp,MAX,fin);
+    strip(tmp);
+    if(strncmp(tmp,"HISTCOUNT",strlen("HISTCOUNT")) == 0)
+    {
+        char ** envVar = NULL;
+        makeargs(tmp,&envVar,"=");
+        *histCount = atoi(envVar[1]);
+        clean(2,envVar);
+        fgets(tmp,MAX,fin);
+        strip(tmp);
+        makeargs(tmp, &envVar,"=");
+        *histFileCount = atoi(envVar[1]);
+
+        clean(2,envVar);
+        envVar = NULL;
+
+    }
+
+    else
+    {
+        char ** envVar = NULL;
+        makeargs(tmp,&envVar,"=");
+        *histFileCount = atoi(envVar[1]);
+        fgets(tmp,MAX,fin);
+        strip(tmp);
+        makeargs(tmp, &envVar,"=");
+        *histCount = atoi(envVar[1]);
+        clean(2,envVar);
+        envVar = NULL;
+
+
+
+    }
+
+    int i = 0;
+    int aliasCount = countAlias(fin);
+    fgets(tmp,MAX,fin);//run through histcount and filecount
+    fgets(tmp,MAX,fin);
+    fgets(tmp,MAX,fin); //get rid of space between env vars and alias
+    while(i<aliasCount)
+    {
+
+        Node * nn = buildNode(fin,&buildTypeAlias);
+        addFirst(aliasList,nn);
+        aliasCount++;
+
+
+
+    }
+    //now build path 2d array
+    fgets(tmp,MAX,fin);//skip the blank line
+
+
+
+
+    fclose(fin);
+
+
+
+
+
+
+
+
+}
+
+
 
 
 int countRecords(FILE * fin, int linesPerRecord)

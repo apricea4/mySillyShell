@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "../linkedlist/linkedList.h"
 
 #define MAX 100
 
@@ -72,5 +73,13 @@ int countRecords(FILE * fin, int linesPerRecord);
  * @warning - The number of records read from the file is checked - exit(-99) if <= 0
  */
 int readTotal(FILE * fin);
+
+
+
+void handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* aliasList, LinkedList* pathList);
+
+int countAlias(FILE * fin);
+
+
 
 #endif // FILEUTIL_H

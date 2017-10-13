@@ -25,7 +25,7 @@ void printargs(int argc, char **argv)
 
 }// end printargs
 
-int makeargs(char *s, char *** argv)
+int makeargs(char *s, char *** argv, char* delim)
 {
 
 	char copy[MAX];
@@ -37,11 +37,11 @@ int makeargs(char *s, char *** argv)
 
 
 
-	char *token = strtok_r(s," ", &savePtr);
+	char *token = strtok_r(s,delim, &savePtr);
 	while(token != NULL)
 	{
 		count++;
-		token = strtok_r(NULL," ", &savePtr);
+		token = strtok_r(NULL,delim, &savePtr);
 
 
 	}
@@ -53,13 +53,13 @@ int makeargs(char *s, char *** argv)
 	}
 
 	(*argv) = (char**)calloc(count+1, sizeof(char*));
-	token = strtok_r(copy," ",&savePtr);
+	token = strtok_r(copy,delim,&savePtr);
 	strip(token);
 	(*argv)[0] = (char*)calloc(strlen(token)+1,sizeof(char));
 	strcpy((*argv)[0],token);
 	for(int i = 1; i<count; i++)
 	{
-		token = strtok_r(NULL," ", &savePtr);
+		token = strtok_r(NULL,delim, &savePtr);
 		strip(token);
 		(*argv)[i] = (char*)calloc(strlen(token)+1,sizeof(char));
 		strcpy((*argv)[i],token);

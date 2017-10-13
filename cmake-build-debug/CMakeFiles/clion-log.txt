@@ -1,0 +1,2 @@
+CMakeLists.txt not found in /home/aprice/os/mySillyShell
+CMake executable is incorrect
