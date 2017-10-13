@@ -76,10 +76,11 @@ int readTotal(FILE * fin);
 
 
 
-void handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* aliasList, LinkedList* pathList);
+void handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* aliasList, char*** pathList);
 
 int countAlias(FILE * fin);
 
+int countPath(char* s);
 
 
 #endif // FILEUTIL_H

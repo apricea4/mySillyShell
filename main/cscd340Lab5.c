@@ -10,7 +10,7 @@ int main()
 	int histCount = 100;
 	int histFileCount = 1000;
 	LinkedList* aliasList = linkedList();
-	LinkedList* pathList = linkedList();
+	char** pathList = NULL;
   int argc, pipeCount;	
   char **argv = NULL, s[MAX];
   int preCount = 0, postCount = 0;
@@ -20,7 +20,7 @@ int main()
 	Fmsshrc = fopen(".msshrc","r");
 	if(Fmsshrc != NULL)
 	{
-		handleRc(&histCount,&histFileCount,Fmsshrc,aliasList,pathList);
+		handleRc(&histCount,&histFileCount,Fmsshrc,aliasList,&pathList);
 	}
 	else
 	{

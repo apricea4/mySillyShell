@@ -58,13 +58,32 @@ int countAlias(FILE * fin)
 
     }
     rewind(fin);
+    return count;
+
+
+}
+
+
+char** makePathList(char* s)
+{
+    char tmp[MAX];
+    char* save;
+    int count = 0;
+    strcpy(tmp,s);
+    char* token = strtok_r(tmp,"=",&save);
+    token = strtok_r(NULL,"=",&save);
+    char** pathList;
+    makeargs(token,&pathList,":");
+    return pathList;
+
+
 
 
 }
 
 
 
-void handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* aliasList, LinkedList* pathList)
+void handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* aliasList, char*** pathList)
 {
 
     char tmp[MAX];
@@ -112,18 +131,27 @@ void handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* aliasLi
 
         Node * nn = buildNode(fin,&buildTypeAlias);
         addFirst(aliasList,nn);
-        aliasCount++;
+        i++;
 
 
 
     }
     //now build path 2d array
     fgets(tmp,MAX,fin);//skip the blank line
+    if(tmp != NULL)
+    {
+        fgets(tmp,MAX,fin);
+
+        *pathList = makePathList(tmp);
+        printf("pathlist %s", *pathList[0]);
+    }
 
 
+    else
+    {
+        fclose(fin);
+    }
 
-
-    fclose(fin);
 
 
 

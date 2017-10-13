@@ -31,7 +31,7 @@ int containsPipe(char *s)
 char ** parsePrePipe(char *s, int * preCount)
 {
 
-    char delim[3] = "|";
+    char delim[3] = " ";
     char* save;
     char copy[MAX];
     strcpy(copy,s);
@@ -55,7 +55,7 @@ char ** parsePostPipe(char *s, int * postCount)
 {
     char* save;
     char copy[MAX];
-    char delim[3] = "|";
+    char delim[3] = " ";
     strcpy(copy,s);
     char* postPipe = strtok_r(copy,"|",&save);
     postPipe = strtok_r(NULL, "|", &save);
@@ -81,6 +81,9 @@ void pipeIt(char ** prePipe, char ** postPipe)
     int fd[2];
     pipe(fd);
 
+
+
+    printf("pre post %s %s \n", *prePipe, *postPipe);
     if(pid == 0)//if child of a.out
     {
         pid_t pid2 = fork();
