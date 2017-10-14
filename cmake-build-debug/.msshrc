@@ -2,5 +2,6 @@ HISTCOUNT = 120
 HISTFILECOUNT = 1200
 
 alias "testAlias" = ls -al
+alias "alias2" = wc -w
 
-PATH=$PATH:/etc:/bin 
+PATH=$PATH:/etc:/bin:/user/myProgs

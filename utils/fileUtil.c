@@ -64,17 +64,9 @@ int countAlias(FILE * fin)
 }
 
 
-char** makePathList(char* s)
+char** makePathList(char* s,char** pathList)
 {
-    char tmp[MAX];
-    char* save;
-    int count = 0;
-    strcpy(tmp,s);
-    char* token = strtok_r(tmp,"=",&save);
-    token = strtok_r(NULL,"=",&save);
-    char** pathList;
-    makeargs(token,&pathList,":");
-    return pathList;
+return NULL;
 
 
 
@@ -83,24 +75,30 @@ char** makePathList(char* s)
 
 
 
-void handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* aliasList, char*** pathList)
+char** handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* aliasList, char** pathList, int* pathListSize)
 {
 
     char tmp[MAX];
     fgets(tmp,MAX,fin);
     strip(tmp);
+    if(tmp == NULL)
+    {
+        return NULL;
+    }
     if(strncmp(tmp,"HISTCOUNT",strlen("HISTCOUNT")) == 0)
     {
         char ** envVar = NULL;
-        makeargs(tmp,&envVar,"=");
+        int c = 0;
+        c = makeargs(tmp,&envVar,"=");
         *histCount = atoi(envVar[1]);
-        clean(2,envVar);
+        clean(c,envVar);
+        envVar = NULL;
         fgets(tmp,MAX,fin);
         strip(tmp);
-        makeargs(tmp, &envVar,"=");
+        c = makeargs(tmp, &envVar,"=");
         *histFileCount = atoi(envVar[1]);
 
-        clean(2,envVar);
+        clean(c,envVar);
         envVar = NULL;
 
     }
@@ -123,7 +121,7 @@ void handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* aliasLi
 
     int i = 0;
     int aliasCount = countAlias(fin);
-    fgets(tmp,MAX,fin);//run through histcount and filecount
+    fgets(tmp,MAX,fin);//run through histcount and filecount because file was rewound in count alias
     fgets(tmp,MAX,fin);
     fgets(tmp,MAX,fin); //get rid of space between env vars and alias
     while(i<aliasCount)
@@ -142,18 +140,29 @@ void handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* aliasLi
     {
         fgets(tmp,MAX,fin);
 
-        *pathList = makePathList(tmp);
-        printf("pathlist %s", *pathList[0]);
+        char* save = NULL;
+        //char parts[MAX];
+        //strcpy(parts,tmp);
+        char* token = strtok_r(tmp,"=",&save);
+        token = strtok_r(NULL,"=",&save);
+
+
+        *pathListSize = makeargs(token,&pathList,":");
+
+
+
+
+        //pathList = makePathList(tmp,pathList);
+        //printf("pathlist %s", pathList[0]);
     }
 
 
-    else
-    {
-        fclose(fin);
-    }
+
+    fclose(fin);
 
 
 
+    return pathList;
 
 
 

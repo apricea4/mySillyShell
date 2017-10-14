@@ -19,6 +19,8 @@ alias.h
 /home/alex/CLionProjects/cs340/shell/linkedlist/linkedList.c
 linkedList.h
 /home/alex/CLionProjects/cs340/shell/linkedlist/linkedList.h
+../alias/alias.h
+/home/alex/CLionProjects/cs340/shell/alias/alias.h
 
 /home/alex/CLionProjects/cs340/shell/linkedlist/linkedList.h
 stdio.h

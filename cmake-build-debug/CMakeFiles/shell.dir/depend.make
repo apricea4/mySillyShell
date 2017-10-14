@@ -6,8 +6,10 @@ CMakeFiles/shell.dir/alias/alias.c.o: ../alias/alias.h
 CMakeFiles/shell.dir/alias/alias.c.o: ../tokenize/makeArgs.h
 CMakeFiles/shell.dir/alias/alias.c.o: ../utils/myUtils.h
 
+CMakeFiles/shell.dir/linkedlist/linkedList.c.o: ../alias/alias.h
 CMakeFiles/shell.dir/linkedlist/linkedList.c.o: ../linkedlist/linkedList.c
 CMakeFiles/shell.dir/linkedlist/linkedList.c.o: ../linkedlist/linkedList.h
+CMakeFiles/shell.dir/linkedlist/linkedList.c.o: ../utils/myUtils.h
 
 CMakeFiles/shell.dir/linkedlist/listUtils.c.o: ../linkedlist/linkedList.h
 CMakeFiles/shell.dir/linkedlist/listUtils.c.o: ../linkedlist/listUtils.c

@@ -3,6 +3,7 @@
 //
 
 #include "linkedList.h"
+#include "../alias/alias.h"
 
 LinkedList * linkedList()
 {
@@ -51,6 +52,8 @@ void addFirst(LinkedList * theList, Node * nn)
         exit(-99);
 
     }
+
+
 
     if(theList->size == 0)
     {
@@ -176,7 +179,6 @@ void clearList(LinkedList * theList, void (*removeData)(void *))
     }
     Node *cur = theList->head->next;
     Node *trace = theList->head->next;
-
     while(cur != NULL)
     {
 

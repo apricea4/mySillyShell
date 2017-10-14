@@ -22,6 +22,7 @@ void * buildTypeAlias(FILE* fin);
 
 int compareAlias(const void * p1, const void * p2);
 
+void cleanTypeAlias(void * ptr);
 
 
 #endif //MYSILLYSHELL_ALIAS_H

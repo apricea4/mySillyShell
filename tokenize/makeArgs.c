@@ -38,6 +38,12 @@ int makeargs(char *s, char *** argv, char* delim)
 
 
 	char *token = strtok_r(s,delim, &savePtr);
+    if(strcmp(delim, ":") == 0)
+    {
+        token = strtok_r(NULL,delim,&savePtr);
+
+    }
+
 	while(token != NULL)
 	{
 		count++;
@@ -52,13 +58,19 @@ int makeargs(char *s, char *** argv, char* delim)
 
 	}
 
-	(*argv) = (char**)calloc(count+1, sizeof(char*));
+
+
 	token = strtok_r(copy,delim,&savePtr);
     if(strcmp(delim, ":") == 0)
     {
         token = strtok_r(NULL,delim,&savePtr);
-        count --;
+
     }
+
+
+
+
+    (*argv) = (char**)calloc(count+1, sizeof(char*));
 	strip(token);
 	(*argv)[0] = (char*)calloc(strlen(token)+1,sizeof(char));
 	strcpy((*argv)[0],token);
@@ -70,6 +82,8 @@ int makeargs(char *s, char *** argv, char* delim)
 		strcpy((*argv)[i],token);
 
 	}
+
+
 	return count;
 
 }// end makeArgs

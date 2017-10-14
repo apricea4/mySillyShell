@@ -9,8 +9,9 @@ int main()
 {
 	int histCount = 100;
 	int histFileCount = 1000;
-	LinkedList* aliasList = linkedList();
-	char** pathList = NULL;
+    int pathListSize = 0;
+	LinkedList* aliasList = linkedList();//free
+	char** pathList = NULL;//free
   int argc, pipeCount;	
   char **argv = NULL, s[MAX];
   int preCount = 0, postCount = 0;
@@ -20,7 +21,8 @@ int main()
 	Fmsshrc = fopen(".msshrc","r");
 	if(Fmsshrc != NULL)
 	{
-		handleRc(&histCount,&histFileCount,Fmsshrc,aliasList,&pathList);
+		pathList = handleRc(&histCount,&histFileCount,Fmsshrc,aliasList,pathList, &pathListSize);
+        printf("histfile count %d ",histCount);
 	}
 	else
 	{
@@ -64,6 +66,13 @@ int main()
 
   }// end while
 
+    //TODO:CLEAN UP MEMORY LEAK
+    int size = sizeof(pathList)/sizeof(pathList[0]);
+
+    printf("pathlist round 2 %s and size %d ", pathList[1], pathListSize);
+    clean(pathListSize,pathList);
+    clearList(aliasList,&cleanTypeAlias);
+    free(aliasList);
   return 0;
 
 }// end main

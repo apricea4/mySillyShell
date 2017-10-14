@@ -7,8 +7,10 @@ CMakeFiles/shell.dir/alias/alias.c.o
  /home/alex/CLionProjects/cs340/shell/tokenize/makeArgs.h
  /home/alex/CLionProjects/cs340/shell/utils/myUtils.h
 CMakeFiles/shell.dir/linkedlist/linkedList.c.o
+ /home/alex/CLionProjects/cs340/shell/alias/alias.h
  /home/alex/CLionProjects/cs340/shell/linkedlist/linkedList.c
  /home/alex/CLionProjects/cs340/shell/linkedlist/linkedList.h
+ /home/alex/CLionProjects/cs340/shell/utils/myUtils.h
 CMakeFiles/shell.dir/linkedlist/listUtils.c.o
  /home/alex/CLionProjects/cs340/shell/linkedlist/linkedList.h
  /home/alex/CLionProjects/cs340/shell/linkedlist/listUtils.c
