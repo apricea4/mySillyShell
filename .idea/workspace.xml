@@ -11,26 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a3ed927-04f3-4067-a09b-e2a2dccae7f5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/shell.dir/utils/fileUtil.c.o" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/a.out" afterPath="$PROJECT_DIR$/a.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/shell.dir/alias/alias.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/shell.dir/alias/alias.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/shell.dir/linkedlist/linkedList.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/shell.dir/linkedlist/linkedList.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/shell.dir/main/cscd340Lab5.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/shell.dir/main/cscd340Lab5.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/shell.dir/tokenize/makeArgs.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/shell.dir/tokenize/makeArgs.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/shell" afterPath="$PROJECT_DIR$/cmake-build-debug/shell" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.msshrc" afterPath="$PROJECT_DIR$/.msshrc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Makefile" afterPath="$PROJECT_DIR$/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alias/alias.c" afterPath="$PROJECT_DIR$/alias/alias.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alias/alias.h" afterPath="$PROJECT_DIR$/alias/alias.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/.msshrc" afterPath="$PROJECT_DIR$/cmake-build-debug/.msshrc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/linkedlist/linkedList.c" afterPath="$PROJECT_DIR$/linkedlist/linkedList.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/cscd340Lab5.c" afterPath="$PROJECT_DIR$/main/cscd340Lab5.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tokenize/makeArgs.c" afterPath="$PROJECT_DIR$/tokenize/makeArgs.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/fileUtil.c" afterPath="$PROJECT_DIR$/utils/fileUtil.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/fileUtil.h" afterPath="$PROJECT_DIR$/utils/fileUtil.h" />
-    </list>
+    <list default="true" id="4a3ed927-04f3-4067-a09b-e2a2dccae7f5" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -275,12 +256,12 @@
       <updated>1507770376596</updated>
       <workItem from="1507770378972" duration="12561000" />
       <workItem from="1507860383724" duration="819000" />
-      <workItem from="1507861320911" duration="29645000" />
+      <workItem from="1507861320911" duration="29816000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43025000" />
+    <option name="totallyTimeSpent" value="43196000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="292" y="64" width="1368" height="780" extended-state="6" />
