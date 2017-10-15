@@ -22,7 +22,7 @@
  *
  * @warning - Since FILE *fin is a pass through it is not checked.
  */
-Node * buildNode(FILE * fin, void *(*buildData)(FILE * in) )
+Node* buildNode(FILE * fin, void *(*buildData)(FILE * in) )
 {
 
     Node* nn = (Node*)calloc(1,sizeof(Node));

@@ -179,17 +179,21 @@ void clearList(LinkedList * theList, void (*removeData)(void *))
     }
     Node *cur = theList->head->next;
     Node *trace = theList->head->next;
-    while(cur != NULL)
-    {
+    while(cur != NULL) {
 
+        if (cur->data == NULL) {
+            printf("NULL DATA ");
+        }
+        trace = trace->next;
         removeData(cur->data);
         free(cur);
         cur = NULL;
-        trace = trace->next;
+
         cur = trace;
 
+
     }
-    free(trace);
+
     trace = NULL;
     free(theList->head);
     theList->size = 0;

@@ -22,7 +22,7 @@ int main()
 	if(Fmsshrc != NULL)
 	{
 		pathList = handleRc(&histCount,&histFileCount,Fmsshrc,aliasList,pathList, &pathListSize);
-        printf("histfile count %d ",histCount);
+
 	}
 	else
 	{
@@ -67,11 +67,11 @@ int main()
   }// end while
 
     //TODO:CLEAN UP MEMORY LEAK
-    int size = sizeof(pathList)/sizeof(pathList[0]);
 
-    printf("pathlist round 2 %s and size %d ", pathList[1], pathListSize);
+
+
     clean(pathListSize,pathList);
-    clearList(aliasList,&cleanTypeAlias);
+    clearList(aliasList,cleanTypeAlias);
     free(aliasList);
   return 0;
 

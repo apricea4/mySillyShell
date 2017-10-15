@@ -21,7 +21,6 @@ void * buildTypeAlias(FILE* fin)
     strcpy(al->aliasName,token);
     al->command = (char*)calloc(strlen(aliasParts[1])+1,sizeof(char));
     strcpy(al->command,aliasParts[1]);
-
     clean(argc,aliasParts);
     //free(aliasParts);
     aliasParts = NULL;
