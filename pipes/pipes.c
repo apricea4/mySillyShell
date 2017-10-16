@@ -83,7 +83,7 @@ void pipeIt(char ** prePipe, char ** postPipe)
 
 
 
-    printf("pre post %s %s \n", *prePipe, *postPipe);
+    //printf("pre post %s %s \n", *prePipe, *postPipe);
     if(pid == 0)//if child of a.out
     {
         pid_t pid2 = fork();
@@ -113,17 +113,17 @@ void pipeIt(char ** prePipe, char ** postPipe)
                 printf("command not found: %s\n",*prePipe);
                 exit(-1);
             }
-            FILE* fout = fopen("redirect.txt","w");
+            //FILE* fout = fopen("redirect.txt","w");
 
-            int fileD = fileno(fout);
+            /*int fileD = fileno(fout);
             close(1);
             dup(fileD);
-            close(fileD);
+            close(fileD);*/
             close(fd[1]);
             close(0);
             dup(fd[0]);
             close(fd[0]);
-            fclose(fout);
+            //fclose(fout);
             if(execvp(postPipe[0], postPipe) < 0)
             {
                 printf("command not found %s\n",*postPipe);

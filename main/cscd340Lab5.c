@@ -23,7 +23,7 @@ int main()
 	if(Fmsshrc != NULL)
 	{
 		pathList = handleRc(&histCount,&histFileCount,Fmsshrc,aliasList,pathList, &pathListSize);
-        //putenv
+
 	}
 	else
 	{
@@ -51,25 +51,54 @@ int main()
 		pipeIt(prePipe, postPipe);
 		clean(preCount, prePipe);
         	clean(postCount, postPipe);
-	}// end if pipeCount	  
+	}// end if pipeCount
 
-        if(redirectCount == 1 && pipeCount == 0)
+    if(redirectCount == 1 && pipeCount == 0)
+    {
+        redirectIt(s);
+
+
+    }
+    if(pipeCount > 0 && redirectCount == 1)
+    {
+        char tmp[MAX];
+        char* save;
+        strcpy(tmp,s);
+        char** argv = NULL;
+         int count = makeargs(tmp,&argv,"|");
+        postPipe = parsePostPipe(s,&postCount);
+        if(strstr(s,"<"))
         {
-            redirectIt(s);
+            //printf("prePipe, postPipe in < %s %s", prePipe[2], *postPipe);
 
+            handleInPipe(argv);
+        }
+        else
+        {
+            //handleOutPipe(s)
 
         }
 
+
+    }
+
+
     if(redirectCount>0 && pipeCount > 0)
     {
-        
+        prePipe = parsePrePipe(s, &preCount);
+        postPipe = parsePostPipe(s,&postCount);
+
+
+
+
+
 
 
 
     }
-	else
+	else if(pipeCount == 0 && redirectCount == 0)
 	{
-		argc = makeargs(s, &argv,"|");
+		argc = makeargs(s, &argv," ");
 	  	if(argc != -1)
 	  		forkIt(argv);
 	  

@@ -1,15 +1,16 @@
-total 72
+total 76
 drwxrwxr-x 2 alex alex  4096 Oct 14 18:29 alias
--rwxrwxr-x 1 alex alex 23760 Oct 15 18:32 a.out
-drwxrwxr-x 3 alex alex  4096 Oct 15 18:24 cmake-build-debug
+-rwxrwxr-x 1 alex alex 23848 Oct 16 16:17 a.out
+drwxrwxr-x 3 alex alex  4096 Oct 16 16:22 cmake-build-debug
 -rw-rw-r-- 1 alex alex   343 Oct 12 19:10 CMakeLists.txt
 drwxrwxr-x 2 alex alex  4096 Oct 15 16:46 input
 drwxrwxr-x 2 alex alex  4096 Oct 14 18:51 linkedlist
-drwxrwxr-x 2 alex alex  4096 Oct 15 15:17 main
+drwxrwxr-x 2 alex alex  4096 Oct 16 16:22 main
 -rw-rw-r-- 1 alex alex   382 Oct 13 18:15 Makefile
--rw-rw-r-- 1 alex alex     0 Oct 15 18:34 output.txt
-drwxrwxr-x 2 alex alex  4096 Oct 15 15:52 pipes
-drwxrwxr-x 2 alex alex  4096 Oct 15 18:32 process
+-rw-rw-r-- 1 alex alex     0 Oct 16 16:24 output.txt
+drwxrwxr-x 2 alex alex  4096 Oct 16 16:17 pipes
+drwxrwxr-x 2 alex alex  4096 Oct 16 16:17 process
 -rw-rw-r-- 1 alex alex    11 Oct 11 17:19 README.Md
+-rw-rw-r-- 1 alex alex     4 Oct 15 19:58 redirect.txt
 drwxrwxr-x 2 alex alex  4096 Oct 15 15:36 tokenize
-drwxrwxr-x 2 alex alex  4096 Oct 15 17:17 utils
+drwxrwxr-x 2 alex alex  4096 Oct 15 19:57 utils

@@ -53,6 +53,55 @@ int containsRedirect(char* s)
 
 }
 
+
+
+void handleInPipe(char** pre)
+{
+    pid_t pid = fork();
+    int status;
+    int fd[2];
+    pipe(fd);
+
+    if(pid == 0)
+    {
+        pid_t pid2 = fork();
+        if(pid2 == 0)
+        {
+            close(fd[0]);
+            close(1);
+            dup(fd[1]);
+            close(fd[1]);
+            redirectIt(pre[0]);
+            exit(-1);
+        }
+        else
+        {
+            waitpid(pid2,&status,0);
+
+            char** argv = NULL;
+            int count = makeargs(pre[1],&argv," ");
+
+
+            close(fd[1]);
+            close(0);
+            dup(fd[0]);
+            close(fd[0]);
+            execvp(argv[0],argv);
+
+
+        }
+
+    }
+    else
+    {
+        waitpid(pid,&status,0);
+
+    }
+
+}
+
+
+
 void redirectIt(char *s)
 {
 
@@ -155,6 +204,7 @@ void handleIn(char** argv)
         removeSpace(tmp);
 
         FILE* fin = fopen(tmp,"r");
+
         if(fin == NULL)
         {
             printf("null file \n");

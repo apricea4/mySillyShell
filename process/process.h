@@ -19,4 +19,8 @@ void handleIn(char** argv);
 
 void handleOut(char** argv);
 
+void handleOutPipe(char** pre);
+
+void  handleInPipe(char** pre);
+
 #endif
