@@ -32,6 +32,8 @@ CMakeFiles/shell.dir/pipes/pipes.c.o: ../utils/myUtils.h
 
 CMakeFiles/shell.dir/process/process.c.o: ../process/process.c
 CMakeFiles/shell.dir/process/process.c.o: ../process/process.h
+CMakeFiles/shell.dir/process/process.c.o: ../tokenize/makeArgs.h
+CMakeFiles/shell.dir/process/process.c.o: ../utils/myUtils.h
 
 CMakeFiles/shell.dir/tokenize/makeArgs.c.o: ../tokenize/makeArgs.c
 CMakeFiles/shell.dir/tokenize/makeArgs.c.o: ../tokenize/makeArgs.h

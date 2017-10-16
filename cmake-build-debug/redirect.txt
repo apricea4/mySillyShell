@@ -1,0 +1,8 @@
+total 108
+-rw-rw-r-- 1 alex alex 33051 Oct 12 19:08 CMakeCache.txt
+drwxrwxr-x 5 alex alex  4096 Oct 15 18:24 CMakeFiles
+-rw-rw-r-- 1 alex alex  1406 Oct 12 19:08 cmake_install.cmake
+-rw-rw-r-- 1 alex alex 11786 Oct 12 19:10 Makefile
+-rw-rw-r-- 1 alex alex     0 Oct 15 18:24 redirect.txt
+-rwxrwxr-x 1 alex alex 42112 Oct 15 18:24 shell
+-rw-rw-r-- 1 alex alex  7445 Oct 12 19:10 shell.cbp

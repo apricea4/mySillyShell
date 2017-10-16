@@ -10,6 +10,7 @@ int main()
 	int histCount = 100;
 	int histFileCount = 1000;
     int pathListSize = 0;
+    int redirectCount = 0;
 	LinkedList* aliasList = linkedList();//free
 	char** pathList = NULL;//free
   int argc, pipeCount;	
@@ -22,7 +23,7 @@ int main()
 	if(Fmsshrc != NULL)
 	{
 		pathList = handleRc(&histCount,&histFileCount,Fmsshrc,aliasList,pathList, &pathListSize);
-
+        //putenv
 	}
 	else
 	{
@@ -40,8 +41,10 @@ int main()
 
   while(strcmp(s, "exit") != 0)
   {
-	pipeCount = containsPipe(s);
-	if(pipeCount > 0)
+      pipeCount = containsPipe(s);
+      redirectCount = containsRedirect(s);
+
+	if(pipeCount > 0 && redirectCount == 0)
 	{
 		prePipe = parsePrePipe(s, &preCount);
 		postPipe = parsePostPipe(s, &postCount);
@@ -50,6 +53,20 @@ int main()
         	clean(postCount, postPipe);
 	}// end if pipeCount	  
 
+        if(redirectCount == 1 && pipeCount == 0)
+        {
+            redirectIt(s);
+
+
+        }
+
+    if(redirectCount>0 && pipeCount > 0)
+    {
+        
+
+
+
+    }
 	else
 	{
 		argc = makeargs(s, &argv,"|");
@@ -70,7 +87,7 @@ int main()
 
 
 
-    clean(pathListSize,pathList);
+    //clean(pathListSize,pathList);
     clearList(aliasList,cleanTypeAlias);
     free(aliasList);
   return 0;

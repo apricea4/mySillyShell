@@ -87,8 +87,10 @@ wait.h
 -
 process.h
 /home/alex/CLionProjects/cs340/shell/process/process.h
-unistd.h
-/home/alex/CLionProjects/cs340/shell/process/unistd.h
+../utils/myUtils.h
+/home/alex/CLionProjects/cs340/shell/utils/myUtils.h
+../tokenize/makeArgs.h
+/home/alex/CLionProjects/cs340/shell/tokenize/makeArgs.h
 
 /home/alex/CLionProjects/cs340/shell/process/process.h
 stdio.h
@@ -96,6 +98,8 @@ stdio.h
 string.h
 -
 stdlib.h
+-
+unistd.h
 -
 unistd.h
 -

@@ -1,4 +1,33 @@
 #include "myUtils.h"
+void removeSpace(char *ar)
+{
+	char tmp[MAX];
+	//strcpy(tmp,ar);
+	int j =0;
+	for(int i =0; i<strlen(ar); i++)
+	{
+        ar[i - j] = ar[i];
+		if(ar[i] == ' ' )
+		{
+
+
+            j++;
+		}
+
+
+
+
+	}
+    ar[strlen(ar)-j] = '\0';
+
+    printf("from remove space %s\n",ar);
+	strip(ar);
+
+
+}
+
+
+
 
 void strip(char *array)
 {

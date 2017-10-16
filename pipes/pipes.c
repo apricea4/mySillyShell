@@ -21,7 +21,7 @@ int containsPipe(char *s)
         ++i;
 
     }
-    printf("contains pipe %d ", i);
+    //printf("contains pipe %d ", i);
     return i;
 
 
@@ -39,7 +39,7 @@ char ** parsePrePipe(char *s, int * preCount)
     strip(prePipe);
 
 
-    printf("prePipe-> %s\n", prePipe );
+    //printf("prePipe-> %s\n", prePipe );
 
     char** pre = NULL;
     *preCount = makeargs(prePipe, &pre, delim);
@@ -59,7 +59,7 @@ char ** parsePostPipe(char *s, int * postCount)
     strcpy(copy,s);
     char* postPipe = strtok_r(copy,"|",&save);
     postPipe = strtok_r(NULL, "|", &save);
-    printf("postPipe-> %s\n", postPipe );
+    //printf("postPipe-> %s\n", postPipe );
 
 
 
@@ -113,10 +113,17 @@ void pipeIt(char ** prePipe, char ** postPipe)
                 printf("command not found: %s\n",*prePipe);
                 exit(-1);
             }
+            FILE* fout = fopen("redirect.txt","w");
+
+            int fileD = fileno(fout);
+            close(1);
+            dup(fileD);
+            close(fileD);
             close(fd[1]);
             close(0);
             dup(fd[0]);
             close(fd[0]);
+            fclose(fout);
             if(execvp(postPipe[0], postPipe) < 0)
             {
                 printf("command not found %s\n",*postPipe);
@@ -126,6 +133,8 @@ void pipeIt(char ** prePipe, char ** postPipe)
 
 
         }
+
+
 
 
 

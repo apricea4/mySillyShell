@@ -5,9 +5,18 @@
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <unistd.h>
 #include <sys/wait.h>
 #include <sys/types.h>
 
 void forkIt(char ** argv);
+
+int containsRedirect(char* s);
+
+void redirectIt(char *s);
+
+void handleIn(char** argv);
+
+void handleOut(char** argv);
 
 #endif

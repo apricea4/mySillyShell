@@ -37,6 +37,6 @@ int menu();
  * @warning - The passed in pointer is checked - exit(-99) if NULL
  */
 void strip(char *array);
-
+void removeSpace(char *array);
 
 #endif

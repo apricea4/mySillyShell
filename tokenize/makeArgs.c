@@ -37,7 +37,7 @@ int makeargs(char *s, char *** argv, char* delim)
 
 
 
-	char *token = strtok_r(s,delim, &savePtr);
+	char *token = strtok_r(copy,delim, &savePtr);
     if(strcmp(delim, ":") == 0)
     {
         token = strtok_r(NULL,delim,&savePtr);
@@ -59,7 +59,7 @@ int makeargs(char *s, char *** argv, char* delim)
 	}
 
 
-
+	strcpy(copy,s);
 	token = strtok_r(copy,delim,&savePtr);
     if(strcmp(delim, ":") == 0)
     {

@@ -143,11 +143,13 @@ char** handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* alias
         char* save = NULL;
         //char parts[MAX];
         //strcpy(parts,tmp);
-        char* token = strtok_r(tmp,"=",&save);
+        //putenv(tmp);
+        /*char* token = strtok_r(tmp,"=",&save);
+
         token = strtok_r(NULL,"=",&save);
 
 
-        *pathListSize = makeargs(token,&pathList,":");
+        *pathListSize = makeargs(token,&pathList,":");*/
 
 
 

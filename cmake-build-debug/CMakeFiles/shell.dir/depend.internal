@@ -33,6 +33,8 @@ CMakeFiles/shell.dir/pipes/pipes.c.o
 CMakeFiles/shell.dir/process/process.c.o
  /home/alex/CLionProjects/cs340/shell/process/process.c
  /home/alex/CLionProjects/cs340/shell/process/process.h
+ /home/alex/CLionProjects/cs340/shell/tokenize/makeArgs.h
+ /home/alex/CLionProjects/cs340/shell/utils/myUtils.h
 CMakeFiles/shell.dir/tokenize/makeArgs.c.o
  /home/alex/CLionProjects/cs340/shell/tokenize/makeArgs.c
  /home/alex/CLionProjects/cs340/shell/tokenize/makeArgs.h
