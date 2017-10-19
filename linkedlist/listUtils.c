@@ -33,6 +33,16 @@ Node* buildNode(FILE * fin, void *(*buildData)(FILE * in) )
 }
 
 
+Node* buildInputNode(char * s, void*(*buildData)(char* s))
+{
+    Node* nn = (Node*)calloc(1,sizeof(Node));
+    nn->data = buildData(s);
+    return nn;
+
+
+}
+
+
 /**
 
  * @brief Builds a node that contains a call to a specific type.

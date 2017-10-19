@@ -72,7 +72,11 @@ char ** parsePostPipe(char *s, int * postCount)
 
 
 }
-void pipeIt(char ** prePipe, char ** postPipe)
+
+
+
+
+void pipeIt(char ** prePipe, char ** postPipe, char* fileName)
 {
 
     pid_t pid = fork();
@@ -113,12 +117,30 @@ void pipeIt(char ** prePipe, char ** postPipe)
                 printf("command not found: %s\n",*prePipe);
                 exit(-1);
             }
-            //FILE* fout = fopen("redirect.txt","w");
+            FILE* fout = fopen(fileName,"w");
 
-            /*int fileD = fileno(fout);
-            close(1);
-            dup(fileD);
-            close(fileD);*/
+            if(fout != NULL)
+            {
+                int fileD = fileno(fout);
+                close(1);
+                dup(fileD);
+                close(fileD);
+                close(fd[1]);
+                close(0);
+                dup(fd[0]);
+                close(fd[0]);
+                fclose(fout);
+                if(execvp(postPipe[0], postPipe) < 0)
+                {
+                    printf("command not found file %s\n",*postPipe);
+                    exit(-1);
+
+                }
+
+
+
+            }
+            /*;*/
             close(fd[1]);
             close(0);
             dup(fd[0]);
@@ -126,7 +148,7 @@ void pipeIt(char ** prePipe, char ** postPipe)
             //fclose(fout);
             if(execvp(postPipe[0], postPipe) < 0)
             {
-                printf("command not found %s\n",*postPipe);
+                printf("command not found post pipe %s\n",*postPipe);
                 exit(-1);
 
             }
@@ -151,4 +173,4 @@ void pipeIt(char ** prePipe, char ** postPipe)
 
 }
 
-//gcc -Wall cscd340Lab5.c ./tokenize/makeArgs.c ./utils/myUtils.c ./pipes/pipes.c ./process/process.c
+

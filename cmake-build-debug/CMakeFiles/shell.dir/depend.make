@@ -3,6 +3,7 @@
 
 CMakeFiles/shell.dir/alias/alias.c.o: ../alias/alias.c
 CMakeFiles/shell.dir/alias/alias.c.o: ../alias/alias.h
+CMakeFiles/shell.dir/alias/alias.c.o: ../linkedlist/linkedList.h
 CMakeFiles/shell.dir/alias/alias.c.o: ../tokenize/makeArgs.h
 CMakeFiles/shell.dir/alias/alias.c.o: ../utils/myUtils.h
 
@@ -25,16 +26,22 @@ CMakeFiles/shell.dir/main/cscd340Lab5.c.o: ../tokenize/makeArgs.h
 CMakeFiles/shell.dir/main/cscd340Lab5.c.o: ../utils/fileUtil.h
 CMakeFiles/shell.dir/main/cscd340Lab5.c.o: ../utils/myUtils.h
 
+CMakeFiles/shell.dir/pipes/pipes.c.o: ../alias/alias.h
+CMakeFiles/shell.dir/pipes/pipes.c.o: ../linkedlist/linkedList.h
 CMakeFiles/shell.dir/pipes/pipes.c.o: ../pipes/pipes.c
 CMakeFiles/shell.dir/pipes/pipes.c.o: ../pipes/pipes.h
 CMakeFiles/shell.dir/pipes/pipes.c.o: ../tokenize/makeArgs.h
 CMakeFiles/shell.dir/pipes/pipes.c.o: ../utils/myUtils.h
 
+CMakeFiles/shell.dir/process/process.c.o: ../alias/alias.h
+CMakeFiles/shell.dir/process/process.c.o: ../linkedlist/linkedList.h
 CMakeFiles/shell.dir/process/process.c.o: ../process/process.c
 CMakeFiles/shell.dir/process/process.c.o: ../process/process.h
 CMakeFiles/shell.dir/process/process.c.o: ../tokenize/makeArgs.h
 CMakeFiles/shell.dir/process/process.c.o: ../utils/myUtils.h
 
+CMakeFiles/shell.dir/tokenize/makeArgs.c.o: ../alias/alias.h
+CMakeFiles/shell.dir/tokenize/makeArgs.c.o: ../linkedlist/linkedList.h
 CMakeFiles/shell.dir/tokenize/makeArgs.c.o: ../tokenize/makeArgs.c
 CMakeFiles/shell.dir/tokenize/makeArgs.c.o: ../tokenize/makeArgs.h
 CMakeFiles/shell.dir/tokenize/makeArgs.c.o: ../utils/myUtils.h
@@ -47,6 +54,8 @@ CMakeFiles/shell.dir/utils/fileUtil.c.o: ../utils/fileUtil.c
 CMakeFiles/shell.dir/utils/fileUtil.c.o: ../utils/fileUtil.h
 CMakeFiles/shell.dir/utils/fileUtil.c.o: ../utils/myUtils.h
 
+CMakeFiles/shell.dir/utils/myUtils.c.o: ../alias/alias.h
+CMakeFiles/shell.dir/utils/myUtils.c.o: ../linkedlist/linkedList.h
 CMakeFiles/shell.dir/utils/myUtils.c.o: ../utils/myUtils.c
 CMakeFiles/shell.dir/utils/myUtils.c.o: ../utils/myUtils.h
 

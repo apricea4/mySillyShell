@@ -2,12 +2,12 @@
 void removeSpace(char *ar)
 {
 	char tmp[MAX];
-	//strcpy(tmp,ar);
+
 	int j =0;
 	for(int i =0; i<strlen(ar); i++)
 	{
         ar[i - j] = ar[i];
-		if(ar[i] == ' ' )
+		if(ar[i] == ' ')
 		{
 
 
@@ -20,12 +20,87 @@ void removeSpace(char *ar)
 	}
     ar[strlen(ar)-j] = '\0';
 
-    printf("from remove space %s\n",ar);
+
 	strip(ar);
 
 
 }
 
+void removeQuotes(char* ar)
+{
+
+	char tmp[MAX];
+
+	int j =0;
+	for(int i =0; i<strlen(ar); i++)
+	{
+		ar[i - j] = ar[i];
+		if(ar[i] == '"')
+		{
+
+
+			j++;
+		}
+
+
+
+
+	}
+	ar[strlen(ar)-j] = '\0';
+
+
+	strip(ar);
+
+
+
+
+}
+
+
+
+
+void insertString(char* s, void* alias)
+{
+	Alias* al = (Alias*)alias;
+
+	char tmpRead[MAX];
+	char tmpWrite[MAX];
+	strcpy(tmpRead,s);
+	char* removable = strstr(tmpRead,al->aliasName);
+	u_long startPosition = removable - tmpRead;
+	printf("start position %lu", startPosition);
+	char left[MAX];
+	char right[MAX];
+	makeSubString(left,tmpRead,startPosition+1,strlen(s));
+	makeSubString(tmpWrite,tmpRead,strlen(al->aliasName) + startPosition,strlen(s));
+	strcat(left,al->command);
+	printf("after first cat %s", left);
+	strcat(left,tmpWrite);
+	printf("after second cat %s", left);
+	strcpy(s,left);
+	printf("is it that easy? %s\n",s);
+
+}
+
+void makeSubString(char* into, char* from, u_long start, u_long end)
+{
+
+
+
+		for(u_long i =0; (i+start)-1< end; i++)
+		{
+			into[i] = from[(start + i)];
+
+
+		}
+
+
+
+
+
+
+
+}
 
 
 void strip(char *array)

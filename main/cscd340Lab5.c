@@ -41,14 +41,81 @@ int main()
 
   while(strcmp(s, "exit") != 0)
   {
+
+      Node* cur = aliasList->head;
+      int found = 0;
+      char tmpS[MAX];
+      strcpy(tmpS,s);
+      char** argList = NULL;
+      int argListCount = makeargs(tmpS,&argList," ");
+      Node * track = NULL;
+      while(cur != NULL)
+      {
+          cur = cur->next;
+          if(checkForAlias(argList,cur->data, argListCount)==1)
+          {
+              insertString(s,cur->data);
+
+
+          }
+
+
+      }
+      if(found != 0)
+      {
+
+          //convertAlias(track->data);
+
+
+
+      }
+      clean(argListCount,argList);
+
+
       pipeCount = containsPipe(s);
       redirectCount = containsRedirect(s);
+
+      char cdTmp[MAX];
+      strcpy(cdTmp,s);
+      if(strstr(cdTmp,"cd") != NULL)
+      {
+
+          char dir[MAX];
+          int j = 0;
+          for(int i =0; i<strlen(s); i++)
+          {
+              if(i>2)
+              {
+                  dir[j] = s[i];
+                  j++;
+
+              }
+
+          }
+
+          strip(dir);
+
+          chdir(dir);
+
+      }
+
+      char aliasTmp[MAX];
+      strcpy(aliasTmp,s);
+      if(strstr(aliasTmp,"alias") !=NULL && strstr(aliasTmp,"=") !=NULL)
+      {
+          Node* nn = buildInputNode(s,buildInputAlias);
+          //check if alias already exists, if it does then remove the old one
+          addFirst(aliasList,nn);
+          printList(aliasList,convertAlias);
+
+      }
+
 
 	if(pipeCount > 0 && redirectCount == 0)
 	{
 		prePipe = parsePrePipe(s, &preCount);
 		postPipe = parsePostPipe(s, &postCount);
-		pipeIt(prePipe, postPipe);
+		pipeIt(prePipe, postPipe, NULL);
 		clean(preCount, prePipe);
         	clean(postCount, postPipe);
 	}// end if pipeCount
@@ -62,11 +129,10 @@ int main()
     if(pipeCount > 0 && redirectCount == 1)
     {
         char tmp[MAX];
-        char* save;
         strcpy(tmp,s);
         char** argv = NULL;
          int count = makeargs(tmp,&argv,"|");
-        postPipe = parsePostPipe(s,&postCount);
+        char* fileName = NULL;
         if(strstr(s,"<"))
         {
             //printf("prePipe, postPipe in < %s %s", prePipe[2], *postPipe);
@@ -75,15 +141,27 @@ int main()
         }
         else
         {
-            //handleOutPipe(s)
+            char tmp[MAX];
+            strcpy(tmp,s);
+            prePipe = parsePrePipe(tmp,&preCount);
+            char** prePostPipe = NULL;
+            int c = makeargs(argv[1],&prePostPipe,">");
+            fileName = prePostPipe[1];
+            postCount = makeargs(prePostPipe[0],&postPipe," ");
+            removeSpace(fileName);
+            pipeIt(prePipe,postPipe,fileName);
+            clean(c,prePostPipe);
+            clean(preCount,prePipe);
+            clean(postCount,postPipe);
 
         }
+        clean(count, argv);
 
 
     }
 
 
-    if(redirectCount>0 && pipeCount > 0)
+    if(redirectCount>1 && pipeCount ==1)
     {
         prePipe = parsePrePipe(s, &preCount);
         postPipe = parsePostPipe(s,&postCount);

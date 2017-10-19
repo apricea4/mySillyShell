@@ -6,6 +6,7 @@
 #define MYSILLYSHELL_ALIAS_H
 
 #include "../utils/myUtils.h"
+#include "../linkedlist/linkedList.h"
 
 struct alias
 {
@@ -20,9 +21,13 @@ void cleanTypeAlias(void * ptr);
 
 void * buildTypeAlias(FILE* fin);
 
-int compareAlias(const void * p1, const void * p2);
+char** compareAliasLineIn(const char* lineIn, LinkedList* aliasList);
 
-void cleanTypeAlias(void * ptr);
+void* buildInputAlias(char* s);
+
+void convertAlias(void*ptr);
+
+int checkForAlias(char** s, void* data, int argc);
 
 
 #endif //MYSILLYSHELL_ALIAS_H

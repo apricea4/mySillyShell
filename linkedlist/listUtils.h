@@ -39,6 +39,8 @@
 Node * buildNode(FILE * fin, void *(*buildData)(FILE * in) );
 
 
+Node * buildInputNode(char* s, void *(*buildData)(char* s));
+
 /**
  
  * @brief Builds a node that contains a call to a specific type.

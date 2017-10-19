@@ -59,6 +59,8 @@ void handleInPipe(char** pre)
 {
     pid_t pid = fork();
     int status;
+    char** argv = NULL;
+    int count = 0;
     int fd[2];
     pipe(fd);
 
@@ -78,15 +80,18 @@ void handleInPipe(char** pre)
         {
             waitpid(pid2,&status,0);
 
-            char** argv = NULL;
-            int count = makeargs(pre[1],&argv," ");
+
+            count = makeargs(pre[1],&argv," ");
 
 
             close(fd[1]);
             close(0);
             dup(fd[0]);
             close(fd[0]);
-            execvp(argv[0],argv);
+            if(execvp(argv[0],argv)<0)
+            {
+                _Exit(139);
+            }
 
 
         }
@@ -95,7 +100,11 @@ void handleInPipe(char** pre)
     else
     {
         waitpid(pid,&status,0);
-
+        clean(count,argv);
+        if(status == 139)
+        {
+            printf("command not found %s\n",*pre);
+        }
     }
 
 }
@@ -150,7 +159,7 @@ void handleOut(char** argv)
         fclose(fout);
         if(execvp(command[0],command)<0)
         {
-           exit(139);
+           exit(-1);
 
         }
         else
@@ -159,7 +168,7 @@ void handleOut(char** argv)
 
 
 
-            if(status == 139)
+            if(status == -1)
             {
                 printf("unknown command %s", *command);
 
@@ -217,7 +226,7 @@ void handleIn(char** argv)
         fclose(fin);
         if(execvp(command[0],command)<0)
         {
-            exit(139);
+            _exit(-1);
         }
 
     }
@@ -226,7 +235,7 @@ void handleIn(char** argv)
         waitpid(pid,&status,0);
 
 
-        if(status == 139)
+        if(status == -1)
         {
             printf("command not found %s\n", *command);
         }

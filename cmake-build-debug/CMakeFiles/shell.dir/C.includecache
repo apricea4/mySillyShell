@@ -11,10 +11,14 @@ alias.h
 /home/alex/CLionProjects/cs340/shell/alias/alias.h
 ../tokenize/makeArgs.h
 /home/alex/CLionProjects/cs340/shell/tokenize/makeArgs.h
+../linkedlist/linkedList.h
+/home/alex/CLionProjects/cs340/shell/linkedlist/linkedList.h
 
 /home/alex/CLionProjects/cs340/shell/alias/alias.h
 ../utils/myUtils.h
 /home/alex/CLionProjects/cs340/shell/utils/myUtils.h
+../linkedlist/linkedList.h
+/home/alex/CLionProjects/cs340/shell/linkedlist/linkedList.h
 
 /home/alex/CLionProjects/cs340/shell/linkedlist/linkedList.c
 linkedList.h
@@ -155,4 +159,6 @@ stdlib.h
 -
 string.h
 -
+../alias/alias.h
+/home/alex/CLionProjects/cs340/shell/alias/alias.h
 

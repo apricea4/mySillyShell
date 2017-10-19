@@ -4,6 +4,7 @@
 CMakeFiles/shell.dir/alias/alias.c.o
  /home/alex/CLionProjects/cs340/shell/alias/alias.c
  /home/alex/CLionProjects/cs340/shell/alias/alias.h
+ /home/alex/CLionProjects/cs340/shell/linkedlist/linkedList.h
  /home/alex/CLionProjects/cs340/shell/tokenize/makeArgs.h
  /home/alex/CLionProjects/cs340/shell/utils/myUtils.h
 CMakeFiles/shell.dir/linkedlist/linkedList.c.o
@@ -26,16 +27,22 @@ CMakeFiles/shell.dir/main/cscd340Lab5.c.o
  /home/alex/CLionProjects/cs340/shell/utils/fileUtil.h
  /home/alex/CLionProjects/cs340/shell/utils/myUtils.h
 CMakeFiles/shell.dir/pipes/pipes.c.o
+ /home/alex/CLionProjects/cs340/shell/alias/alias.h
+ /home/alex/CLionProjects/cs340/shell/linkedlist/linkedList.h
  /home/alex/CLionProjects/cs340/shell/pipes/pipes.c
  /home/alex/CLionProjects/cs340/shell/pipes/pipes.h
  /home/alex/CLionProjects/cs340/shell/tokenize/makeArgs.h
  /home/alex/CLionProjects/cs340/shell/utils/myUtils.h
 CMakeFiles/shell.dir/process/process.c.o
+ /home/alex/CLionProjects/cs340/shell/alias/alias.h
+ /home/alex/CLionProjects/cs340/shell/linkedlist/linkedList.h
  /home/alex/CLionProjects/cs340/shell/process/process.c
  /home/alex/CLionProjects/cs340/shell/process/process.h
  /home/alex/CLionProjects/cs340/shell/tokenize/makeArgs.h
  /home/alex/CLionProjects/cs340/shell/utils/myUtils.h
 CMakeFiles/shell.dir/tokenize/makeArgs.c.o
+ /home/alex/CLionProjects/cs340/shell/alias/alias.h
+ /home/alex/CLionProjects/cs340/shell/linkedlist/linkedList.h
  /home/alex/CLionProjects/cs340/shell/tokenize/makeArgs.c
  /home/alex/CLionProjects/cs340/shell/tokenize/makeArgs.h
  /home/alex/CLionProjects/cs340/shell/utils/myUtils.h
@@ -48,5 +55,7 @@ CMakeFiles/shell.dir/utils/fileUtil.c.o
  /home/alex/CLionProjects/cs340/shell/utils/fileUtil.h
  /home/alex/CLionProjects/cs340/shell/utils/myUtils.h
 CMakeFiles/shell.dir/utils/myUtils.c.o
+ /home/alex/CLionProjects/cs340/shell/alias/alias.h
+ /home/alex/CLionProjects/cs340/shell/linkedlist/linkedList.h
  /home/alex/CLionProjects/cs340/shell/utils/myUtils.c
  /home/alex/CLionProjects/cs340/shell/utils/myUtils.h

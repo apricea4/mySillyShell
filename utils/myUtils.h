@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "../alias/alias.h"
 
 #define MAX 100
 
@@ -38,5 +39,9 @@ int menu();
  */
 void strip(char *array);
 void removeSpace(char *array);
-
+void removeQuotes(char* ar);
+void insertString(char* s,void* alias);
+void makeSubString(char* into, char* from, u_long start, u_long end);
+void makeLeftSub(char* into, char* from, u_long start);
+void makeRightSub(char* into, char* from, u_long start, u_long end);
 #endif
