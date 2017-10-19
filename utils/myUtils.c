@@ -1,7 +1,7 @@
 #include "myUtils.h"
 void removeSpace(char *ar)
 {
-	char tmp[MAX];
+
 
 	int j =0;
 	for(int i =0; i<strlen(ar); i++)
@@ -29,7 +29,7 @@ void removeSpace(char *ar)
 void removeQuotes(char* ar)
 {
 
-	char tmp[MAX];
+
 
 	int j =0;
 	for(int i =0; i<strlen(ar); i++)
@@ -64,39 +64,53 @@ void insertString(char* s, void* alias)
 	Alias* al = (Alias*)alias;
 
 	char tmpRead[MAX];
-	char tmpWrite[MAX];
+
 	strcpy(tmpRead,s);
 	char* removable = strstr(tmpRead,al->aliasName);
 	u_long startPosition = removable - tmpRead;
 	printf("start position %lu", startPosition);
-	char left[MAX];
-	char right[MAX];
-	makeSubString(left,tmpRead,startPosition+1,strlen(s));
-	makeSubString(tmpWrite,tmpRead,strlen(al->aliasName) + startPosition,strlen(s));
+	char* left = NULL;
+	char* right = NULL;
+	left = makeLeftString(tmpRead,startPosition);
+	right = makeRightString(tmpRead,strlen(al->aliasName) + startPosition,strlen(s));
 	strcat(left,al->command);
-	printf("after first cat %s", left);
-	strcat(left,tmpWrite);
-	printf("after second cat %s", left);
+	//printf("after first cat %s", left);
+	strcat(left,right);
+
+	//printf("after second cat %s", left);
 	strcpy(s,left);
-	printf("is it that easy? %s\n",s);
+    free(left);
+    free(right);
+
 
 }
 
-void makeSubString(char* into, char* from, u_long start, u_long end)
+char* makeLeftString(char* from, u_long start)
 {
 
+    char * into = calloc(MAX,sizeof(char));
 
-
-		for(u_long i =0; (i+start)-1< end; i++)
+		for(u_long i =0; i< start; i++)
 		{
-			into[i] = from[(start + i)];
+			into[i] = from[i];
 
 
 		}
+    return into;
 
+}
 
+char* makeRightString(char* from, u_long start, u_long end)
+{
+    char* right = calloc(MAX,sizeof(char));
+    int j =0;
+    for(u_long i = start; i<end; i++)
+    {
+        right[j] = from[i];
+        j++;
 
-
+    }
+    return right;
 
 
 

@@ -102,7 +102,7 @@
 		<Unit filename="/home/alex/CLionProjects/cs340/shell/linkedlist/listUtils.h">
 			<Option target="shell"/>
 		</Unit>
-		<Unit filename="/home/alex/CLionProjects/cs340/shell/main/cscd340Lab5.c">
+		<Unit filename="/home/alex/CLionProjects/cs340/shell/main/cscd340Lab6.c">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/home/alex/CLionProjects/cs340/shell/pipes/pipes.c">

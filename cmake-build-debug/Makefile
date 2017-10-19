@@ -204,32 +204,32 @@ linkedlist/listUtils.c.s:
 	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/linkedlist/listUtils.c.s
 .PHONY : linkedlist/listUtils.c.s
 
-main/cscd340Lab5.o: main/cscd340Lab5.c.o
+main/cscd340Lab6.o: main/cscd340Lab6.c.o
 
-.PHONY : main/cscd340Lab5.o
+.PHONY : main/cscd340Lab6.o
 
 # target to build an object file
-main/cscd340Lab5.c.o:
-	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/main/cscd340Lab5.c.o
-.PHONY : main/cscd340Lab5.c.o
+main/cscd340Lab6.c.o:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/main/cscd340Lab6.c.o
+.PHONY : main/cscd340Lab6.c.o
 
-main/cscd340Lab5.i: main/cscd340Lab5.c.i
+main/cscd340Lab6.i: main/cscd340Lab6.c.i
 
-.PHONY : main/cscd340Lab5.i
+.PHONY : main/cscd340Lab6.i
 
 # target to preprocess a source file
-main/cscd340Lab5.c.i:
-	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/main/cscd340Lab5.c.i
-.PHONY : main/cscd340Lab5.c.i
+main/cscd340Lab6.c.i:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/main/cscd340Lab6.c.i
+.PHONY : main/cscd340Lab6.c.i
 
-main/cscd340Lab5.s: main/cscd340Lab5.c.s
+main/cscd340Lab6.s: main/cscd340Lab6.c.s
 
-.PHONY : main/cscd340Lab5.s
+.PHONY : main/cscd340Lab6.s
 
 # target to generate assembly for a file
-main/cscd340Lab5.c.s:
-	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/main/cscd340Lab5.c.s
-.PHONY : main/cscd340Lab5.c.s
+main/cscd340Lab6.c.s:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/main/cscd340Lab6.c.s
+.PHONY : main/cscd340Lab6.c.s
 
 pipes/pipes.o: pipes/pipes.c.o
 
@@ -384,9 +384,9 @@ help:
 	@echo "... linkedlist/listUtils.o"
 	@echo "... linkedlist/listUtils.i"
 	@echo "... linkedlist/listUtils.s"
-	@echo "... main/cscd340Lab5.o"
-	@echo "... main/cscd340Lab5.i"
-	@echo "... main/cscd340Lab5.s"
+	@echo "... main/cscd340Lab6.o"
+	@echo "... main/cscd340Lab6.i"
+	@echo "... main/cscd340Lab6.s"
 	@echo "... pipes/pipes.o"
 	@echo "... pipes/pipes.i"
 	@echo "... pipes/pipes.s"

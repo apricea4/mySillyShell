@@ -57,28 +57,28 @@ include CMakeFiles/shell.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/shell.dir/flags.make
 
-CMakeFiles/shell.dir/main/cscd340Lab5.c.o: CMakeFiles/shell.dir/flags.make
-CMakeFiles/shell.dir/main/cscd340Lab5.c.o: ../main/cscd340Lab5.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/CLionProjects/cs340/shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/shell.dir/main/cscd340Lab5.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/main/cscd340Lab5.c.o   -c /home/alex/CLionProjects/cs340/shell/main/cscd340Lab5.c
+CMakeFiles/shell.dir/main/cscd340Lab6.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/main/cscd340Lab6.c.o: ../main/cscd340Lab6.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/CLionProjects/cs340/shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/shell.dir/main/cscd340Lab6.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/main/cscd340Lab6.c.o   -c /home/alex/CLionProjects/cs340/shell/main/cscd340Lab6.c
 
-CMakeFiles/shell.dir/main/cscd340Lab5.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/main/cscd340Lab5.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alex/CLionProjects/cs340/shell/main/cscd340Lab5.c > CMakeFiles/shell.dir/main/cscd340Lab5.c.i
+CMakeFiles/shell.dir/main/cscd340Lab6.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/main/cscd340Lab6.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alex/CLionProjects/cs340/shell/main/cscd340Lab6.c > CMakeFiles/shell.dir/main/cscd340Lab6.c.i
 
-CMakeFiles/shell.dir/main/cscd340Lab5.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/main/cscd340Lab5.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alex/CLionProjects/cs340/shell/main/cscd340Lab5.c -o CMakeFiles/shell.dir/main/cscd340Lab5.c.s
+CMakeFiles/shell.dir/main/cscd340Lab6.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/main/cscd340Lab6.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alex/CLionProjects/cs340/shell/main/cscd340Lab6.c -o CMakeFiles/shell.dir/main/cscd340Lab6.c.s
 
-CMakeFiles/shell.dir/main/cscd340Lab5.c.o.requires:
+CMakeFiles/shell.dir/main/cscd340Lab6.c.o.requires:
 
-.PHONY : CMakeFiles/shell.dir/main/cscd340Lab5.c.o.requires
+.PHONY : CMakeFiles/shell.dir/main/cscd340Lab6.c.o.requires
 
-CMakeFiles/shell.dir/main/cscd340Lab5.c.o.provides: CMakeFiles/shell.dir/main/cscd340Lab5.c.o.requires
-	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/main/cscd340Lab5.c.o.provides.build
-.PHONY : CMakeFiles/shell.dir/main/cscd340Lab5.c.o.provides
+CMakeFiles/shell.dir/main/cscd340Lab6.c.o.provides: CMakeFiles/shell.dir/main/cscd340Lab6.c.o.requires
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/main/cscd340Lab6.c.o.provides.build
+.PHONY : CMakeFiles/shell.dir/main/cscd340Lab6.c.o.provides
 
-CMakeFiles/shell.dir/main/cscd340Lab5.c.o.provides.build: CMakeFiles/shell.dir/main/cscd340Lab5.c.o
+CMakeFiles/shell.dir/main/cscd340Lab6.c.o.provides.build: CMakeFiles/shell.dir/main/cscd340Lab6.c.o
 
 
 CMakeFiles/shell.dir/tokenize/makeArgs.c.o: CMakeFiles/shell.dir/flags.make
@@ -275,7 +275,7 @@ CMakeFiles/shell.dir/alias/alias.c.o.provides.build: CMakeFiles/shell.dir/alias/
 
 # Object files for target shell
 shell_OBJECTS = \
-"CMakeFiles/shell.dir/main/cscd340Lab5.c.o" \
+"CMakeFiles/shell.dir/main/cscd340Lab6.c.o" \
 "CMakeFiles/shell.dir/tokenize/makeArgs.c.o" \
 "CMakeFiles/shell.dir/utils/myUtils.c.o" \
 "CMakeFiles/shell.dir/process/process.c.o" \
@@ -288,7 +288,7 @@ shell_OBJECTS = \
 # External object files for target shell
 shell_EXTERNAL_OBJECTS =
 
-shell: CMakeFiles/shell.dir/main/cscd340Lab5.c.o
+shell: CMakeFiles/shell.dir/main/cscd340Lab6.c.o
 shell: CMakeFiles/shell.dir/tokenize/makeArgs.c.o
 shell: CMakeFiles/shell.dir/utils/myUtils.c.o
 shell: CMakeFiles/shell.dir/process/process.c.o
@@ -307,7 +307,7 @@ CMakeFiles/shell.dir/build: shell
 
 .PHONY : CMakeFiles/shell.dir/build
 
-CMakeFiles/shell.dir/requires: CMakeFiles/shell.dir/main/cscd340Lab5.c.o.requires
+CMakeFiles/shell.dir/requires: CMakeFiles/shell.dir/main/cscd340Lab6.c.o.requires
 CMakeFiles/shell.dir/requires: CMakeFiles/shell.dir/tokenize/makeArgs.c.o.requires
 CMakeFiles/shell.dir/requires: CMakeFiles/shell.dir/utils/myUtils.c.o.requires
 CMakeFiles/shell.dir/requires: CMakeFiles/shell.dir/process/process.c.o.requires

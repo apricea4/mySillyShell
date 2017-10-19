@@ -41,7 +41,7 @@ void strip(char *array);
 void removeSpace(char *array);
 void removeQuotes(char* ar);
 void insertString(char* s,void* alias);
-void makeSubString(char* into, char* from, u_long start, u_long end);
-void makeLeftSub(char* into, char* from, u_long start);
-void makeRightSub(char* into, char* from, u_long start, u_long end);
+char* makeSubString(char* from, u_long start, u_long end);
+char* makeLeftString(char* from, u_long start);
+char* makeRightString(char* from, u_long start, u_long end);
 #endif

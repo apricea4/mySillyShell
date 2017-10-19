@@ -75,7 +75,7 @@ return NULL;
 
 
 
-char** handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* aliasList, char** pathList, int* pathListSize)
+void handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* aliasList, char* pathList, int* pathListSize)
 {
 
     char tmp[MAX];
@@ -83,7 +83,7 @@ char** handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* alias
     strip(tmp);
     if(tmp == NULL)
     {
-        return NULL;
+        return;
     }
     if(strncmp(tmp,"HISTCOUNT",strlen("HISTCOUNT")) == 0)
     {
@@ -139,11 +139,13 @@ char** handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* alias
     if(tmp != NULL)
     {
         fgets(tmp,MAX,fin);
-
-        char* save = NULL;
+        strip(tmp);
+        //pathList = (char*)calloc(strlen(tmp)+1,sizeof(char));
+        strcpy(pathList,tmp);
         //char parts[MAX];
         //strcpy(parts,tmp);
         //putenv(tmp);
+        //printf("get env %s", getenv("PATH"));
         /*char* token = strtok_r(tmp,"=",&save);
 
         token = strtok_r(NULL,"=",&save);
@@ -164,7 +166,7 @@ char** handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* alias
 
 
 
-    return pathList;
+
 
 
 

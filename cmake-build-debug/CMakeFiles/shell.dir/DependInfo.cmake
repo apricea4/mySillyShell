@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/alex/CLionProjects/cs340/shell/alias/alias.c" "/home/alex/CLionProjects/cs340/shell/cmake-build-debug/CMakeFiles/shell.dir/alias/alias.c.o"
   "/home/alex/CLionProjects/cs340/shell/linkedlist/linkedList.c" "/home/alex/CLionProjects/cs340/shell/cmake-build-debug/CMakeFiles/shell.dir/linkedlist/linkedList.c.o"
   "/home/alex/CLionProjects/cs340/shell/linkedlist/listUtils.c" "/home/alex/CLionProjects/cs340/shell/cmake-build-debug/CMakeFiles/shell.dir/linkedlist/listUtils.c.o"
-  "/home/alex/CLionProjects/cs340/shell/main/cscd340Lab5.c" "/home/alex/CLionProjects/cs340/shell/cmake-build-debug/CMakeFiles/shell.dir/main/cscd340Lab5.c.o"
+  "/home/alex/CLionProjects/cs340/shell/main/cscd340Lab6.c" "/home/alex/CLionProjects/cs340/shell/cmake-build-debug/CMakeFiles/shell.dir/main/cscd340Lab6.c.o"
   "/home/alex/CLionProjects/cs340/shell/pipes/pipes.c" "/home/alex/CLionProjects/cs340/shell/cmake-build-debug/CMakeFiles/shell.dir/pipes/pipes.c.o"
   "/home/alex/CLionProjects/cs340/shell/process/process.c" "/home/alex/CLionProjects/cs340/shell/cmake-build-debug/CMakeFiles/shell.dir/process/process.c.o"
   "/home/alex/CLionProjects/cs340/shell/tokenize/makeArgs.c" "/home/alex/CLionProjects/cs340/shell/cmake-build-debug/CMakeFiles/shell.dir/tokenize/makeArgs.c.o"

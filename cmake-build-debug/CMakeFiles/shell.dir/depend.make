@@ -16,15 +16,15 @@ CMakeFiles/shell.dir/linkedlist/listUtils.c.o: ../linkedlist/linkedList.h
 CMakeFiles/shell.dir/linkedlist/listUtils.c.o: ../linkedlist/listUtils.c
 CMakeFiles/shell.dir/linkedlist/listUtils.c.o: ../linkedlist/listUtils.h
 
-CMakeFiles/shell.dir/main/cscd340Lab5.c.o: ../alias/alias.h
-CMakeFiles/shell.dir/main/cscd340Lab5.c.o: ../linkedlist/linkedList.h
-CMakeFiles/shell.dir/main/cscd340Lab5.c.o: ../linkedlist/listUtils.h
-CMakeFiles/shell.dir/main/cscd340Lab5.c.o: ../main/cscd340Lab5.c
-CMakeFiles/shell.dir/main/cscd340Lab5.c.o: ../pipes/pipes.h
-CMakeFiles/shell.dir/main/cscd340Lab5.c.o: ../process/process.h
-CMakeFiles/shell.dir/main/cscd340Lab5.c.o: ../tokenize/makeArgs.h
-CMakeFiles/shell.dir/main/cscd340Lab5.c.o: ../utils/fileUtil.h
-CMakeFiles/shell.dir/main/cscd340Lab5.c.o: ../utils/myUtils.h
+CMakeFiles/shell.dir/main/cscd340Lab6.c.o: ../alias/alias.h
+CMakeFiles/shell.dir/main/cscd340Lab6.c.o: ../linkedlist/linkedList.h
+CMakeFiles/shell.dir/main/cscd340Lab6.c.o: ../linkedlist/listUtils.h
+CMakeFiles/shell.dir/main/cscd340Lab6.c.o: ../main/cscd340Lab6.c
+CMakeFiles/shell.dir/main/cscd340Lab6.c.o: ../pipes/pipes.h
+CMakeFiles/shell.dir/main/cscd340Lab6.c.o: ../process/process.h
+CMakeFiles/shell.dir/main/cscd340Lab6.c.o: ../tokenize/makeArgs.h
+CMakeFiles/shell.dir/main/cscd340Lab6.c.o: ../utils/fileUtil.h
+CMakeFiles/shell.dir/main/cscd340Lab6.c.o: ../utils/myUtils.h
 
 CMakeFiles/shell.dir/pipes/pipes.c.o: ../alias/alias.h
 CMakeFiles/shell.dir/pipes/pipes.c.o: ../linkedlist/linkedList.h

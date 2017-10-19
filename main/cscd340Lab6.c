@@ -12,7 +12,7 @@ int main()
     int pathListSize = 0;
     int redirectCount = 0;
 	LinkedList* aliasList = linkedList();//free
-	char** pathList = NULL;//free
+	char pathList[MAX];
   int argc, pipeCount;	
   char **argv = NULL, s[MAX];
   int preCount = 0, postCount = 0;
@@ -22,7 +22,9 @@ int main()
 	Fmsshrc = fopen(".msshrc","r");
 	if(Fmsshrc != NULL)
 	{
-		pathList = handleRc(&histCount,&histFileCount,Fmsshrc,aliasList,pathList, &pathListSize);
+		handleRc(&histCount,&histFileCount,Fmsshrc,aliasList,pathList, &pathListSize);
+
+        putenv(pathList);
 
 	}
 	else
@@ -42,33 +44,26 @@ int main()
   while(strcmp(s, "exit") != 0)
   {
 
-      Node* cur = aliasList->head;
+      Node* cur = aliasList->head->next;
       int found = 0;
       char tmpS[MAX];
       strcpy(tmpS,s);
       char** argList = NULL;
       int argListCount = makeargs(tmpS,&argList," ");
-      Node * track = NULL;
+
       while(cur != NULL)
       {
-          cur = cur->next;
+
           if(checkForAlias(argList,cur->data, argListCount)==1)
           {
               insertString(s,cur->data);
 
 
           }
-
-
-      }
-      if(found != 0)
-      {
-
-          //convertAlias(track->data);
-
-
+          cur = cur->next;
 
       }
+
       clean(argListCount,argList);
 
 
@@ -104,7 +99,7 @@ int main()
       if(strstr(aliasTmp,"alias") !=NULL && strstr(aliasTmp,"=") !=NULL)
       {
           Node* nn = buildInputNode(s,buildInputAlias);
-          //check if alias already exists, if it does then remove the old one
+
           addFirst(aliasList,nn);
           printList(aliasList,convertAlias);
 
@@ -126,7 +121,7 @@ int main()
 
 
     }
-    if(pipeCount > 0 && redirectCount == 1)
+    if(pipeCount == 1 && redirectCount == 1)
     {
         char tmp[MAX];
         strcpy(tmp,s);
@@ -161,19 +156,7 @@ int main()
     }
 
 
-    if(redirectCount>1 && pipeCount ==1)
-    {
-        prePipe = parsePrePipe(s, &preCount);
-        postPipe = parsePostPipe(s,&postCount);
 
-
-
-
-
-
-
-
-    }
 	else if(pipeCount == 0 && redirectCount == 0)
 	{
 		argc = makeargs(s, &argv," ");

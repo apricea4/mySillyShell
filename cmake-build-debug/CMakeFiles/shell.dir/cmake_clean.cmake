@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/shell.dir/main/cscd340Lab5.c.o"
+  "CMakeFiles/shell.dir/main/cscd340Lab6.c.o"
   "CMakeFiles/shell.dir/tokenize/makeArgs.c.o"
   "CMakeFiles/shell.dir/utils/myUtils.c.o"
   "CMakeFiles/shell.dir/process/process.c.o"

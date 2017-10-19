@@ -76,7 +76,7 @@ int readTotal(FILE * fin);
 
 
 
-char** handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* aliasList, char** pathList, int* pathListSize);
+void handleRc(int* histCount, int* histFileCount, FILE* fin, LinkedList* aliasList, char* pathList, int* pathListSize);
 
 int countAlias(FILE * fin);
 

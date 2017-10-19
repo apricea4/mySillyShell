@@ -24,28 +24,7 @@ int checkForAlias(char** s, void* data, int argc)
 
 }
 
-char** compareAliasLineIn(const char* lineIn, LinkedList* aliasList)
-{
 
-    Node* cur = aliasList->head;
-    while(cur != NULL)
-    {
-
-        cur = cur-> next;
-        Alias* al = (Alias*)cur->data;
-        if(strcmp(lineIn,al->aliasName)==0)
-        {
-
-
-
-
-        }
-
-    }
-
-
-
-}
 
 
 

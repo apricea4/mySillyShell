@@ -117,29 +117,32 @@ void pipeIt(char ** prePipe, char ** postPipe, char* fileName)
                 printf("command not found: %s\n",*prePipe);
                 exit(-1);
             }
-            FILE* fout = fopen(fileName,"w");
-
-            if(fout != NULL)
+            if(fileName != NULL)
             {
-                int fileD = fileno(fout);
-                close(1);
-                dup(fileD);
-                close(fileD);
-                close(fd[1]);
-                close(0);
-                dup(fd[0]);
-                close(fd[0]);
-                fclose(fout);
-                if(execvp(postPipe[0], postPipe) < 0)
+                FILE* fout = fopen(fileName,"w");
+
+                if(fout != NULL)
                 {
-                    printf("command not found file %s\n",*postPipe);
-                    exit(-1);
+                    int fileD = fileno(fout);
+                    close(1);
+                    dup(fileD);
+                    close(fileD);
+                    close(fd[1]);
+                    close(0);
+                    dup(fd[0]);
+                    close(fd[0]);
+                    fclose(fout);
+                    if(execvp(postPipe[0], postPipe) < 0)
+                    {
+                        printf("command not found file %s\n",*postPipe);
+                        exit(-1);
+
+                    }
 
                 }
 
-
-
             }
+
             /*;*/
             close(fd[1]);
             close(0);

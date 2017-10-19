@@ -9,13 +9,20 @@ void forkIt(char ** argv)
     if(pid != 0)
     {
         waitpid(pid,&status,0);
-
+        if(status == -1)
+        {
+            printf("command not found %s", *argv);
+        }
 
     }
     else
     {
-        execvp(argv[0],argv);
-        exit(-1);
+        if(execvp(argv[0],argv)<0)
+        {
+            printf("command not found %s", *argv);
+            _Exit(-1);
+        }
+
 
     }
 
@@ -124,7 +131,7 @@ void redirectIt(char *s)
     }
     //printf("argc %d",argc);
     strcpy(tmp,s);
-    char** argv2 = NULL;
+
     clean(argc,argv);
     argc = makeargs(tmp,&argv,">");
 
